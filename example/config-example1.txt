@@ -1,9 +1,9 @@
 # PEERSIM EXAMPLE 1
 
 random.seed 1234567890
-simulation.cycles 30
+simulation.cycles 10
 
-#control.shf Shuffle
+control.shf Shuffle
 
 network.size 10
  
@@ -31,4 +31,3 @@ include.init rnd lin
 
 control.av example.aggregation.AverageObserver
 control.av.protocol avg
-
