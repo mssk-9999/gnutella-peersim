@@ -71,12 +71,13 @@ public class AverageFunction extends SingleValueHolder implements CDProtocol {
             AverageFunction neighbor = (AverageFunction) peer
                     .getProtocol(protocolID);
 
-			System.out.print("before "+this.value+"\t"+neighbor.value);
+			//System.out.print("before "+this.value+"\t"+neighbor.value);
+			System.out.println(this.value+"\t"+neighbor.value);
 
             double mean = (this.value + neighbor.value) / 2;
             this.value = mean;
             neighbor.value = mean;
-			System.out.println("\tafter " + this.value+"\t" + neighbor.value);
+			//System.out.println("\tafter " + this.value+"\t" + neighbor.value);
         }
     }
 

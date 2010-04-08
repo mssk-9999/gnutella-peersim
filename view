@@ -1,0 +1,15 @@
+#! /usr/bin/gnuplot -persist
+
+set xrange [0:100]
+set yrange [0:100]
+
+plot "output" index 0 with lp, \
+	"output" index 10 with lp, \
+	"output" index 20 with lp, \
+	"output" index 30 with lp, \
+	"output" index 40 with lp, \
+	"output" index 50 with lp, \
+	"output" index 60 with lp, \
+	"output" index 70 with lp, \
+	"output" index 80 with lp, \
+	"output" index 90 with lp

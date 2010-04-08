@@ -28,7 +28,7 @@ init.ld.max 100
 init.ld.min 1
 
 # you can change this to include the linear initializer instead
-include.init rnd pk 
+include.init rnd ld 
 
 control.ao example.aggregation.AverageObserver
 control.ao.protocol avg
