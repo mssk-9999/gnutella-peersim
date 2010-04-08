@@ -3,7 +3,7 @@
 random.seed 1234567890
 simulation.cycles 30
 
-control.shf Shuffle
+#control.shf Shuffle
 
 network.size 10
  
