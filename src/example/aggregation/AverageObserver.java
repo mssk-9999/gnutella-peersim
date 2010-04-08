@@ -109,7 +109,9 @@ public class AverageObserver implements Control {
         }
 
         /* Printing statistics */
-        System.out.println(name + ": " + time + " " + is);
+        //System.out.println(name + ": " + time + " " + is);
+        //System.out.println( "time\tmin\tmax\tn\tsum/t\tvar\tcoutnmin\tcountmax\n" );
+        System.out.println( time + " " + is);
 
         /* Terminate if accuracy target is reached */
         return (is.getStD() <= accuracy);

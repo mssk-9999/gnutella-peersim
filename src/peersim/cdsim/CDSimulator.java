@@ -198,7 +198,6 @@ public static final void nextExperiment()
 	System.err.println("CDSimulator: starting simulation");
 	for (int i = 0; i < cycles; ++i) {
 		CDState.setCycle(i);
-
 		boolean stop = false;
 		for (int j = 0; j < controls.length; ++j) {
 			if (ctrlSchedules[j].active(i))

@@ -158,6 +158,7 @@ public static void main(String[] args)
 	if(newout!=System.out) System.setOut(newout);
 	
 	int exps = Configuration.getInt(PAR_EXPS,1);
+	System.out.println( "time\tmin\tmax\tvar\tcoutnmin\tcountmax\n" );
 
 	final int SIMID = getSimID();
 	if( SIMID == UNKNOWN )
