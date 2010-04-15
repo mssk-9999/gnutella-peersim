@@ -104,6 +104,7 @@ public boolean execute() {
 		{
 			// we avoid the entire expression being cast to double
 			setter.set(i,Math.round(i*step)+min.longValue());
+			System.out.println(Math.round(i*step)+min.longValue());
 		}
 	}
 	else
@@ -111,6 +112,7 @@ public boolean execute() {
 		for(int i=0; i<Network.size(); ++i)
 		{
 			setter.set(i,i*step+min.doubleValue());
+			System.out.println(i*step+min.doubleValue());
 		}
 	}
 

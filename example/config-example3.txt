@@ -43,7 +43,7 @@ init.lin.max 100
 init.lin.min 1
 
 # you can replace peak by lin to run the linear initialization instead
-include.init rnd peak
+include.init rnd lin
 
 # you can replace basicbal by avgbal to change balancing strategy instead
 include.protocol ncast basicbal

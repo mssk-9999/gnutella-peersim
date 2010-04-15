@@ -11,6 +11,7 @@ doc:
 	javadoc -overview overview.html -classpath src:jep-2.3.0.jar:djep-1.0.0.jar -d doc \
                 -group "Peersim" "peersim*" \
                 -group "Examples" "example.*" \
+                -group "Gnutella" "gnutella.*" \
 		peersim \
 		peersim.cdsim \
 		peersim.config \
@@ -27,7 +28,8 @@ doc:
 		example.loadbalance \
 		example.edaggregation \
 		example.hot \
-		example.newscast 
+		example.newscast \
+		gnutella
 
 docnew:
 	rm -rf doc/*
@@ -50,7 +52,8 @@ docnew:
 		example.loadbalance \
 		example.hot \
 		example.edaggregation \
-		example.newscast 
+		example.newscast \
+		gnutella
 
 
 release: clean all docnew

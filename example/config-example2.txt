@@ -23,7 +23,7 @@ init.pk.value 10000
 init.pk.protocol avg
 
 init.ld LinearDistribution
-init.ld.protocol 1
+init.ld.protocol avg
 init.ld.max 100
 init.ld.min 1
 

@@ -1,15 +1,20 @@
 #! /usr/bin/gnuplot -persist
 
-set xrange [0:100]
-set yrange [0:100]
+#set xrange [0:270]
+#set yrange [0:100]
 
-plot "output" index 0 with lp, \
-	"output" index 10 with lp, \
-	"output" index 20 with lp, \
-	"output" index 30 with lp, \
-	"output" index 40 with lp, \
-	"output" index 50 with lp, \
-	"output" index 60 with lp, \
-	"output" index 70 with lp, \
-	"output" index 80 with lp, \
-	"output" index 90 with lp
+#plot "graph00000000.dat"  with line #using 1:2
+plot "output"  with line 
+#plot "output"  
+
+#plot "output" index 0 , \
+#	"output" index 2 , \
+#	"output" index 5 , \
+#	"output" index 7 , \
+#	"output" index 9 
+
+#plot "output" index 0 with line, \
+#	"output" index 2 with line , \
+#	"output" index 5 with line , \
+#	"output" index 7 with line, \
+#	"output" index 9 
