@@ -1,11 +1,9 @@
-
-
 random.seed 1234567890
 simulation.cycles 1
 
 #control.shf Shuffle
 
-network.size 100
+network.size 5000
  
 protocol.lnk IdleProtocol
 
@@ -14,20 +12,17 @@ protocol.avg.linkable lnk
  
 init.rnd WireKOut
 init.rnd.protocol lnk
-init.rnd.k 1
+init.rnd.k 10
 
 init.peak example.aggregation.PeakDistributionInitializer
 init.peak.value 100
 init.peak.protocol avg
 
-init.lin LinearDistribution
-init.lin.protocol avg
-init.lin.max 100
-init.lin.min 1
-init.lin.step 1
+init.gnu GnutellaDistribution
+init.gnu.protocol avg
 
 # you can change this to select the peak initializer instead
-include.init rnd lin
+include.init rnd gnu
 
 control.av example.aggregation.AverageObserver
 control.av.protocol avg
