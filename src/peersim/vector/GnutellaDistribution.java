@@ -54,7 +54,7 @@ public boolean execute() {
 	for(int a=0; a < file_number; a++)
 	{
 		percentageRandom[a]=r.nextInt(45) + 5;
-		System.out.println(percentageRandom[a]);
+		//System.out.println(percentageRandom[a]);
 	}
 	
 	/*
@@ -94,7 +94,7 @@ public boolean execute() {
 			}
 			else
 			{
-				ran=r.nextInt(4980)+20;
+				ran=r.nextInt(9980)+20;
 				setter.set(i, (double)ran);
 	//			System.out.println(ran+" "+getter.get(i));
 			}

@@ -118,7 +118,8 @@ public class LBObserver implements Control {
             }
             // shows the values of load at each node:
             if (show_values) {
-                buf.append(value+":");
+                //buf.append(value+":");
+                buf.append(value+"\n");
             }
             
         }

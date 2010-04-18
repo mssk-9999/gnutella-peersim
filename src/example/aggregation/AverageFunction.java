@@ -48,7 +48,7 @@ public class AverageFunction extends SingleValueHolder implements CDProtocol {
         super(prefix);
     }
 
-	public static int count=0;
+	//public static int count=0;
 
     /**
      * Using an underlying {@link Linkable} protocol choses a neighbor and
@@ -63,15 +63,28 @@ public class AverageFunction extends SingleValueHolder implements CDProtocol {
         int linkableID = FastConfig.getLinkable(protocolID);
         Linkable linkable = (Linkable) node.getProtocol(linkableID);
         if (linkable.degree() > 0) {
-            Node peer = linkable.getNeighbor(CommonState.r.nextInt(linkable
-                    .degree()));
+            //Node peer = linkable.getNeighbor(CommonState.r.nextInt(linkable
+             //       .degree()));
 
             // Failure handling
-            if (!peer.isUp())
-                return;
+            //if (!peer.isUp())
+             //   return;
 
-            AverageFunction neighbor = (AverageFunction) peer
-                    .getProtocol(protocolID);
+			System.out.print(this.value + " neighbors: ");
+			for( int i=0; i < linkable.degree(); i++)
+			{
+				Node peer = linkable.getNeighbor(i);
+				AverageFunction neighbor = (AverageFunction) peer
+				       .getProtocol(protocolID);
+				System.out.print(" " + neighbor.value);
+			}
+			System.out.println();
+
+
+
+
+            //AverageFunction neighbor = (AverageFunction) peer
+             //       .getProtocol(protocolID);
 
 			//System.out.print("before "+this.value+"\t"+neighbor.value);
 			//System.out.println(this.value+"\t"+neighbor.value);

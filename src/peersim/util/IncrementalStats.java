@@ -179,10 +179,10 @@ public double getStD() { return Math.sqrt(getVar()); }
 */
 public String toString() {
 
-//	return " min\t"+min+" max\t"+max+" n\t"+n+" sum/n\t"+sum/n+" var\t"+getVar()+" countmin\t"+
-//		countmin+" countmax\t"+countmax;
-	return "\t"+min+"\t"+max+"\t\t"+getVar()+"\t"+
-		countmin+"\t"+countmax;
+	return " min\t"+min+" max\t"+max+" n\t"+n+" sum/n\t"+sum/n+" var\t"+getVar()+" countmin\t"+
+		countmin+" countmax\t"+countmax;
+//	return "\t"+min+"\t"+max+"\t"+getVar()+"\t"+
+//		countmin+"\t"+countmax;
 }
 
 }

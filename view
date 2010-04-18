@@ -4,8 +4,8 @@
 #set yrange [0:20]
 
 #plot "graph00000000.dat"  with line #using 1:2
-#plot "output"  with line 
-plot "output"  with boxes 
+plot "output"  with line 
+#plot "output"  with boxes 
 #plot "output"  
 
 #plot "output" index 0 , \

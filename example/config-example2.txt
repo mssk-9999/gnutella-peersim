@@ -2,11 +2,11 @@
 
 random.seed 1234567890
 
-simulation.cycles 30
+simulation.cycles 3
 
 control.shf Shuffle
 
-network.size 50000
+network.size 500
  
 protocol.lnk example.newscast.SimpleNewscast
 protocol.lnk.cache 20

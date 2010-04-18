@@ -2,7 +2,7 @@
 #random.seed 1234567890
 simulation.cycles 1
 
-network.size 10000
+network.size 100
 
 protocol.link IdleProtocol
 
@@ -21,10 +21,11 @@ control.io.protocol link
 control.io.coord_protocol coord
 control.io.file_base graph
 
-control.degree DegreeStats
-control.degree.protocol link
-control.degree.undir
-control.degree.method freq
+#control.degree DegreeStats
+#control.degree.protocol link
+#control.degree.undir
+#control.degree.method freq
 
-include.control io degree
+#include.control io degree
+include.control io 
 

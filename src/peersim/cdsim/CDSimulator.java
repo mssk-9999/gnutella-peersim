@@ -203,6 +203,9 @@ public static final void nextExperiment()
 			if (ctrlSchedules[j].active(i))
 				stop = stop || controls[j].execute();
 		}
+
+		System.out.println("\n");
+
 		if (stop)
 			break;
 		System.err.println("CDSimulator: cycle " + i + " done");

@@ -106,12 +106,13 @@ public class AverageObserver implements Control {
             SingleValue protocol = (SingleValue) Network.get(i)
                     .getProtocol(pid);
             is.add(protocol.getValue());
+			//System.out.println(protocol.getValue() );
         }
 
         /* Printing statistics */
         //System.out.println( "time\tmin\tmax\tn\tsum/t\tvar\tcoutnmin\tcountmax\n" );
         //System.out.println( time + " " + is);
-        System.out.print( "\n\n");
+        //System.out.print( "\n\n");
 
         /* Terminate if accuracy target is reached */
         return (is.getStD() <= accuracy);
