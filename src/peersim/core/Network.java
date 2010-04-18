@@ -146,6 +146,7 @@ public static void reset() {
 		{
 			node[i] = (Node)prototype.clone();
 			node[i].setIndex(i);
+			//System.out.println(node[i]);
 		}
 	}
 }

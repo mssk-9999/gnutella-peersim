@@ -1,31 +1,12 @@
-/*
- * Copyright (c) 2003-2005 The BISON Project
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License version 2 as
- * published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
- *
- */
-		
+
 package peersim.core;
+
 
 import peersim.config.*;
 
-/**
-* This is the default {@link Node} class that is used to compose the
-* {@link Network}.
-*/
-public class GeneralNode implements Node {
 
+public class GnuNode implements Node 
+{
 
 // ================= fields ========================================
 // =================================================================
@@ -57,6 +38,10 @@ protected int failstate = Fallible.OK;
 */
 private long ID;
 
+
+private final static int maxReach = 5;
+private int[] routingTable = new int[maxReach];
+
 // ================ constructor and initialization =================
 // =================================================================
 
@@ -66,7 +51,7 @@ private long ID;
 * (components that have type {@value peersim.core.Node#PAR_PROT}) from
 * the configuration.
 */
-public GeneralNode(String prefix) {
+public GnuNode(String prefix) {
 	
 	String[] names = Configuration.getNames(PAR_PROT);
 	CommonState.setNode(this);
@@ -78,6 +63,8 @@ public GeneralNode(String prefix) {
 			Configuration.getInstance(names[i]);
 		protocol[i] = p; 
 	}
+	for( int i=0; i < maxReach; i++)
+	{	routingTable[i]=-1; }
 }
 
 
@@ -85,8 +72,8 @@ public GeneralNode(String prefix) {
 
 public Object clone() {
 	
-	GeneralNode result = null;
-	try { result=(GeneralNode)super.clone(); }
+	GnuNode result = null;
+	try { result=(GnuNode)super.clone(); }
 	catch( CloneNotSupportedException e ) {} // never happens
 	result.protocol = new Protocol[protocol.length];
 	CommonState.setNode(result);
@@ -161,6 +148,28 @@ public int getIndex() { return index; }
 
 public void setIndex(int index) { this.index = index; }
 	
+//################################################################################
+//
+
+protected int whichEmpty()
+{   
+	int i=-1;
+	while(routingTable[++i]!=-1) {}
+	if(i<maxReach) return  i;
+	else return -1;
+}
+
+
+protected boolean addToTable(int nodeID, int pos) 
+{
+	if(pos>=maxReach) return false;
+	routingTable[pos]=nodeID;
+	//System.out.println("end of routing table");
+	return true;
+}
+
+	
+//################################################################################
 //------------------------------------------------------------------
 
 /**
@@ -179,6 +188,10 @@ public String toString()
 	{
 		buffer.append("protocol["+i+"]="+protocol[i]+"\n");
 	}
+	for(int i=0; i<maxReach; i++)
+	{
+		buffer.append("routingTable["+i+"]="+routingTable[i]+"\n");
+	}
 	return buffer.toString();
 }
 
@@ -186,7 +199,6 @@ public String toString()
 
 /** Implemented as <code>(int)getID()</code>. */
 public int hashCode() { return (int)getID(); }
-
 
 }
 
