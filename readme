@@ -1,0 +1,68 @@
+						 22C: 196: 001 Peer-to-peer Networks
+                        Total points = 100 (worth 30% of your grades)
+                        Assigned February 18, 2010, due May 6, 2010
+
+This is a first draft of the projects. Pick a project topic, form a team of two persons, and start working. At
+the end, you need to write a report, and arrange a demonstration of your work if appropriate. The length of
+the report should be similar to that of a conference paper (10-15 pages), and it must document all your
+activities, along with a list of relevant references. Do not include codes, but you can put them on your
+webpage, with a citation containing the URL of the link.
+
+You have to report and present interim progress in the class.
+
+PeerSim (http://peersim.sourceforge.net/ ) is a free, multi-threaded, discrete event simulator to
+evaluate, investigate, and explore peer-to-peer protocols. PeerSim runs in several UNIX-like
+operating systems. Its goal is to make the understanding peer-to-peer protocol source code easy,
+to facilitate easy comparison of different protocols, and to have a reasonable performance for the
+simulation runs. PeerSim already supports Chord, Accordion, Koorde, Kelips, Tapestry, and
+Kademlia. These implementations are specific to PeerSim, and consist of substantially fewer lines
+of code than the real implementations.
+
+After the P2P network is built, the system should be able to output the following information:
+
+- The number of nodes and edges in the P2P network.
+
+- The ID, node degree and coordinates of any node in the P2P network.
+
+- The 1-hop neighbor nodes of any node in the P2P network.
+
+- The overlay route and the underlying physical route between any two nodes in the P2P network.
+
+Study the tools for network configuration. The simulator has the following functionality:
+
+(a) It can accept an input file, and place it (deterministically or randomly) on one or more nodes
+in the P2P network.
+
+(b) It can issue a query message from any node to search a file in the P2P network. The query is
+configured with a TTL value. The query is broadcast to all neighbors. When a node receives a
+query, it searches the local "file list" file. If there is a match, then it generates and sends a hit
+message back to the source node that issued the query. If the file cannot be found in the local file
+list, then the query is forwarded to all the neighbors except the one sending the query. The hit
+message is sent back via reverse path routing. To make it possible, each node maintains a routing
+table that maps the message ID to its sender.
+
+       Try out the simulator and its functionalities. Issue a query from any node in the network
+and retrieve a file. No specific interface is necessary. You may implement it either with GUI or
+with simple text modes.
+
+Project 1: Experiment with Gnutella
+
+Use PeerSim or some other tool to generate graphs of size up to n > 5000 nodes. Arrange to
+randomly place copies of 20 files – each file should be placed at 0.1% to 1% of the peers. 
+
+Now, run various search algorithms 
+(a) using Gnutella-type flooding 
+(b) using the random walker model 
+(c) using 1-hop replication. 
+
+In each case, compute the search time from multiple trials, as well as the total number of nodes 
+visited to locate the object. Then compare the performances of the two search algorithms. 
+Add explanations about your findings.
+
+       The project report should be (a) a user manual of your simulator, introducing how your
+project compiles and runs. All the functionalities described above should be implemented in your
+project and introduced in your project report. (b) The source code - remember to provide a
+Makefile to automatically build your project. (c) Executable files of your project. Your project
+must be self-contained. So please include all the files necessary for your project to work well.
+
+

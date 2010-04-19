@@ -70,6 +70,7 @@ public class AverageFunction extends SingleValueHolder implements CDProtocol {
             //if (!peer.isUp())
              //   return;
 
+			/*
 			System.out.print(this.value + " neighbors: ");
 			for( int i=0; i < linkable.degree(); i++)
 			{
@@ -79,6 +80,7 @@ public class AverageFunction extends SingleValueHolder implements CDProtocol {
 				System.out.print(" " + neighbor.value);
 			}
 			System.out.println();
+			*/
 
 
 

@@ -6,6 +6,7 @@ simulation.cycles 1
 #control.shf Shuffle
 
 network.size 10000
+network.node GnuNode
  
 protocol.lnk IdleProtocol
 

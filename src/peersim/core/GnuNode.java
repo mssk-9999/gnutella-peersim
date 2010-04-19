@@ -31,6 +31,7 @@ private int index;
 * The fail state of the node.
 */
 protected int failstate = Fallible.OK;
+//protected int failstate = Fallible.DOWN;
 
 /**
 * The ID of the node. It should be final, however it can't be final because

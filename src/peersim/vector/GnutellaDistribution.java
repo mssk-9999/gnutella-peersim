@@ -96,8 +96,8 @@ public boolean execute() {
 			{
 				ran=r.nextInt(9980)+20;
 				setter.set(i, (double)ran);
-	//			System.out.println(ran+" "+getter.get(i));
 			}
+				//System.out.println(getter.get(i));
 		}
 
 		/*

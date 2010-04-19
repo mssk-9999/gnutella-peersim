@@ -1,0 +1,37 @@
+#
+################################ GOBAL PARAMETER ################################################
+#random.seed 1234567890
+simulation.cycles 1
+
+#control.shf Shuffle
+
+network.size 5000
+network.node GnuNode
+ 
+################################ PROTOCOL ################################################
+protocol.lnk IdleProtocol
+
+#protocol.avg example.aggregation.AverageFunction
+protocol.avg FloodingQuery
+protocol.avg.linkable lnk
+protocol.avg.target 0
+
+
+################################ INIT CONTROL ################################################
+#init.rnd WireKOut
+init.rnd WireScaleFreeBA
+init.rnd.protocol lnk
+init.rnd.k 2
+
+init.gnu GnutellaDistribution
+init.gnu.protocol avg
+
+
+################################ INIT INCULDE ################################################
+# you can change this to select the peak initializer instead
+include.init rnd gnu
+
+
+################################ WATCHING ################################################
+control.test example.aggregation.AverageObserver
+control.test.protocol avg
