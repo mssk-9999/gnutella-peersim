@@ -2,11 +2,11 @@
 
 random.seed 1234567890
 
-simulation.cycles 3
+simulation.cycles 10
 
-control.shf Shuffle
+#control.shf Shuffle
 
-network.size 500
+network.size 5000
  
 protocol.lnk example.newscast.SimpleNewscast
 protocol.lnk.cache 20
@@ -16,7 +16,7 @@ protocol.avg.linkable lnk
 
 init.rnd WireKOut
 init.rnd.protocol lnk
-init.rnd.k 20
+init.rnd.k 2
 
 init.pk example.aggregation.PeakDistributionInitializer
 init.pk.value 10000
@@ -24,10 +24,11 @@ init.pk.protocol avg
 
 init.ld LinearDistribution
 init.ld.protocol avg
-init.ld.max 100
+init.ld.max 1000
 init.ld.min 1
 
 # you can change this to include the linear initializer instead
+#include.init rnd ld 
 include.init rnd ld 
 
 control.ao example.aggregation.AverageObserver

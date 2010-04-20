@@ -14,7 +14,7 @@ init.0.protocol coord
 init.1 example.hot.WireInetTopology
 init.1.protocol link #the linkable to be wired
 init.1.coord_protocol coord
-init.1.alpha 50
+init.1.alpha 100
 
 control.io example.hot.InetObserver
 control.io.protocol link
