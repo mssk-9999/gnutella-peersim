@@ -30,6 +30,7 @@ public interface Fallible {
 	/**
 	* Fail state which indicates that the object is operating normally.
 	*/
+	//public int OK = 0;
 	public int OK = 0;
 
 	/**

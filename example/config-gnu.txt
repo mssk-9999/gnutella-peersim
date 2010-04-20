@@ -1,7 +1,7 @@
 #
 ################################ GOBAL PARAMETER ################################################
 #random.seed 1234567890
-simulation.cycles 1
+simulation.cycles 2
 
 #control.shf Shuffle
 
@@ -14,8 +14,10 @@ protocol.lnk IdleProtocol
 #protocol.avg example.aggregation.AverageFunction
 protocol.avg FloodingQuery
 protocol.avg.linkable lnk
-protocol.avg.target 0
-
+# which file we are finding
+protocol.avg.target 19
+# from which node we start to look
+protocol.avg.start 100
 
 ################################ INIT CONTROL ################################################
 #init.rnd WireKOut
@@ -32,6 +34,9 @@ init.gnu.protocol avg
 include.init rnd gnu
 
 
+
 ################################ WATCHING ################################################
-control.test example.aggregation.AverageObserver
-control.test.protocol avg
+################################ CONTROL ################################################
+control.sn  SetNode
+control.sn.protocol avg
+#control.sn.protocol lnk

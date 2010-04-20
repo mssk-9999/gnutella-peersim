@@ -8,13 +8,13 @@
 #plot "graph00000000.dat"  #using 1:2
 #plot "output"  with line 
 #plot "output"  with boxes 
-#plot "output"  
+plot "output"  
 
-plot "output" index 0 , \
-	"output" index 1 , \
-	"output" index 2 , \
-	"output" index 3 , \
-	"output" index 4 
+#plot "output" index 0 , \
+#	"output" index 1 , \
+#	"output" index 2 , \
+#	"output" index 3 , \
+#	"output" index 4 
 
 #plot "output" index 1 with line, \
 #	"output" index 3 with line , \
