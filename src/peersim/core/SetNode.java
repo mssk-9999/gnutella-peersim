@@ -72,7 +72,7 @@ public class SetNode implements Control {
 			  Node n= Network.get(i);
 			  if(n.isUp())
 			  {
-				  System.out.println("should wake " +n.getID() + " neigbhour");
+				  //System.out.println("should wake " +n.getID() + " neigbhour");
 			  }
 			  
         }

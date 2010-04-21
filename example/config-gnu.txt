@@ -1,7 +1,7 @@
 #
 ################################ GOBAL PARAMETER ################################################
 #random.seed 1234567890
-simulation.cycles 2
+simulation.cycles 1
 
 #control.shf Shuffle
 
@@ -20,10 +20,10 @@ protocol.avg.target 19
 protocol.avg.start 100
 
 ################################ INIT CONTROL ################################################
-#init.rnd WireKOut
-init.rnd WireScaleFreeBA
+init.rnd WireKOut
+#init.rnd WireScaleFreeBA
 init.rnd.protocol lnk
-init.rnd.k 2
+init.rnd.k 1
 
 init.gnu GnutellaDistribution
 init.gnu.protocol avg
@@ -39,4 +39,4 @@ include.init rnd gnu
 ################################ CONTROL ################################################
 control.sn  SetNode
 control.sn.protocol avg
-#control.sn.protocol lnk
+control.sn.protocol lnk

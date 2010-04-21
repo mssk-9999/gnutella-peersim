@@ -49,13 +49,13 @@ private final int start;
     public void nextCycle(Node node, int protocolID) 
 	{
 		//	if( node.isUp() ) node.setFailState(2);;
-		if ( node.getID() != start && node.isUp())
-		{
+		//if ( node.getID() != start && node.isUp())
+		//{
 
-			System.out.println( "sleeping "+node.getID() );
-			if( node.isUp() ) node.setFailState(2);;
-			return; 
-		}
+		//	System.out.println( "sleeping "+node.getID() );
+		//	if( node.isUp() ) node.setFailState(2);;
+		//	return; 
+		//}
 		//if( !node.isUp() )
 		//if ( node.getID() == start && !node.isUp())
 		//{ System.out.println("wake up " + node.getID()) ;node.setFailState(Fallible.OK);}
@@ -72,10 +72,9 @@ private final int start;
 		//System.out.println(node  + "value: "+this.value+"\n");
 		//System.out.println(node.routingTable[1]);
 		//System.out.println( this.value + " ");
-			/*
         int linkableID = FastConfig.getLinkable(protocolID);
         Linkable linkable = (Linkable) node.getProtocol(linkableID);
-		System.out.print( node.getID());
+		//System.out.print( node.getID());
         if (linkable.degree() > 0) {
 
             //Node peer = linkable.getNeighbor(CommonState.r.nextInt(linkable
@@ -87,7 +86,7 @@ private final int start;
 				Node peer = linkable.getNeighbor(i);
 				//if(!peer.isUp()){ System.out.println("wake up " + peer.getID()) ;peer.setFailState(1);}
 				FloodingQuery neighbor = (FloodingQuery) peer
-				       .getProtocol(protocolID);
+				     .getProtocol(protocolID);
 				//System.out.print(" " +peer.getID());
 				//System.out.println(peer.getID() + " ");
 				//System.out.print(neighbor.value+" ");
@@ -95,13 +94,26 @@ private final int start;
 				if( target==neighbor.value)
 				{
 					//System.out.println(target + " in "+ node.getID()+ "'s neighborhood") ;
+					if(((GnuNode)node).addToTable(peer.getID()));
+						return ;
+				}
+				else
+				{
+					if(!((GnuNode)node).addToTable(peer.getID()))
+					{
+						System.out.println("routingTable is full");
+						return;
+					}
+					else
+					{
+						System.out.println("adding" + peer.getID());
+					}
 				}
 
 			}
-			System.out.println();
+			//System.out.println();
 
 
-			*/
 
 
 
@@ -119,7 +131,7 @@ private final int start;
  //           this.value = mean;
   //          neighbor.value = mean;
 			//System.out.println("\tafter " + this.value+"\t" + neighbor.value);
-        //}
+        }
     }
 
 	//public void setAllDown()

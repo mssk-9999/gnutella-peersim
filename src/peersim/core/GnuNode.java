@@ -41,7 +41,7 @@ private long ID;
 
 
 private final static int maxReach = 5;
-private int[] routingTable = new int[maxReach];
+private long[] routingTable = new long[maxReach];
 
 // ================ constructor and initialization =================
 // =================================================================
@@ -161,10 +161,16 @@ protected int whichEmpty()
 }
 
 
-protected boolean addToTable(int nodeID, int pos) 
+//protected boolean addToTable(int nodeID, int pos) 
+protected boolean addToTable(long nodeID) 
 {
-	if(pos>=maxReach) return false;
-	routingTable[pos]=nodeID;
+	int i=0;
+	while( i<maxReach-1 && routingTable[i] != -1) 
+	{
+		i++;
+	}
+	if(i>=maxReach-1) return false;
+	routingTable[i]=nodeID;
 	//System.out.println("end of routing table");
 	return true;
 }
