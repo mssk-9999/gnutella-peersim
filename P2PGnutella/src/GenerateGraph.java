@@ -12,6 +12,7 @@ public class GenerateGraph {
 		
 		for(int i=1; i<=5000; i++){
 			graph.add(new Node(i, GenerateNeighbors()));
+			System.out.println(graph.size());
 		}
 
 		

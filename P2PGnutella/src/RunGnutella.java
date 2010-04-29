@@ -48,8 +48,8 @@ public class RunGnutella {
 		
 		}
 		
-		System.out.println("Average Time for 1000 runs is: " + (averageRunTime/1000.0));
-		System.out.println("Average Hops for 1000 runs is: " + (averageHops/1000.0));
+		//System.out.println("Average Time for 1000 runs is: " + (averageRunTime/1000.0));
+		//System.out.println("Average Hops for 1000 runs is: " + (averageHops/1000.0));
 		
 		
 

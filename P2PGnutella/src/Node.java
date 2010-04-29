@@ -50,7 +50,7 @@ public class Node {
 		}
 		
 		if(fileFound){
-			System.out.println("Found at " + nodeId);
+			//System.out.println("Found at " + nodeId);
 			return nodeId;
 		}
 		else if(in.hopCount >= 7){
@@ -66,7 +66,7 @@ public class Node {
 							System.out.println("Files are: " + fileList.get(j).FileName);
 							
 						}*/
-						System.out.println(nodeId);
+						//System.out.println(nodeId);
 						return neighbors.get(i).Flood(in);
 					}
 				}
