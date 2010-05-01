@@ -11,6 +11,7 @@ public class Node {
 	public Node(int idNum)
 	{
 		nodeId = idNum;
+		AddFilesToList();
 	}
 	
 	//constructor
@@ -19,6 +20,12 @@ public class Node {
 		AddFilesToList();
 		neighbors = nodeList;
 	}
+
+	public void addNeighbors( List<Node> nodeList)
+	{
+		neighbors = nodeList;
+	}
+
 	
 	public void AddFilesToList(){
 		//files should appear in between 5 and 50 times total in the network

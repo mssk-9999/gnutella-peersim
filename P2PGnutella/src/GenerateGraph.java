@@ -6,15 +6,24 @@ public class GenerateGraph {
 	List<Node> graph = new ArrayList<Node>();
 	
 	public GenerateGraph(){
-
 		
 		graph.add(new Node(0,null));
 		
 		for(int i=1; i<=5000; i++){
-			System.out.print(i+"'s neighbors ");
-			graph.add(new Node(i, GenerateNeighbors()));
+			//System.out.print(i+"'s neighbors ");
+			//graph.add(new Node(i, GenerateNeighbors()));
+			graph.add(new Node(i));
+			//System.out.println();
+		}
+
+		// link
+		
+		for(int i=1; i<=5000; i++){
+			graph.get(i).addNeighbors(GenerateNeighbors());
 			System.out.println();
 		}
+
+
 		
 	}//end constructor
 	
@@ -32,12 +41,14 @@ public class GenerateGraph {
 				nodes.add(graph.get(neighbor));
 			}
 
+			///*
 			for(int j=0; j<nodes.size(); j++)
 			{
 				System.out.print(nodes.get(j).nodeId + " ");
 				if ( (j+1)%5==0)
 				System.out.println();
 			}
+			//*/
 		}
 		else{
 			//System.out.println();
@@ -47,6 +58,7 @@ public class GenerateGraph {
 				nodes.add(graph.get(neighbor));
 			}
 
+			///*
 			//System.out.println();
 			for(int j=0; j<nodes.size(); j++)
 			{
@@ -54,6 +66,7 @@ public class GenerateGraph {
 				if ( (j+1)%5==0)
 				System.out.println();
 			}
+			//*/
 		}
 		return nodes;
 	}

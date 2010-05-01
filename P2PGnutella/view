@@ -4,15 +4,15 @@
 #set yrange [0:20]
 #set yrange [4500:5000]
 
+#set terminal png
+#set output "output.png"
+
 #plot "graph00000000.dat"  with line #using 1:2
 #plot "graph00000000.dat"  #using 1:2
 #plot "output"  with line 
 #plot "output"  with boxes 
 
-set terminal png
-set output "output.png"
-
-plot "output"  
+#plot "output"  
 
 #plot "output" index 0 , \
 #	"output" index 1 , \
