@@ -3,16 +3,19 @@ import java.util.*;
 public class GenerateGraph {
 	
 	int n=100;
-	List<Node> graph = new ArrayList<Node>();
+	//List<Node> graph = new ArrayList<Node>();
+	List<NodeOneHop> graph = new ArrayList<NodeOneHop>();
 	
 	public GenerateGraph(){
 		
-		graph.add(new Node(0,null));
+		//graph.add(new Node(0,null));
+		graph.add(new NodeOneHop(0,null));
 		
 		for(int i=1; i<=5000; i++){
 			//System.out.print(i+"'s neighbors ");
-			//graph.add(new Node(i, GenerateNeighbors()));
-			graph.add(new Node(i));
+			//graph.add(new NodeOneHop(i, GenerateNeighbors()));
+			//graph.add(new Node(i));
+			graph.add(new NodeOneHop(i));
 			//System.out.println();
 		}
 
@@ -28,8 +31,10 @@ public class GenerateGraph {
 	}//end constructor
 	
 	
-	public List<Node> GenerateNeighbors(){
-		List<Node> nodes = new ArrayList<Node>();
+	//public List<Node> GenerateNeighbors(){
+	public List<NodeOneHop> GenerateNeighbors(){
+		//List<Node> nodes = new ArrayList<Node>();
+		List<NodeOneHop> nodes = new ArrayList<NodeOneHop>();
 		Random rand = new Random();
 		
 		/*

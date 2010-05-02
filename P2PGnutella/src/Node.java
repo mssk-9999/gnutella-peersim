@@ -6,6 +6,7 @@ public class Node {
 	int nodeId;
 	List<Files> fileList = new ArrayList<Files>();
 	List<Node> neighbors= new ArrayList<Node>();
+	//List<List<Node>> neighborNeighbors;
 	Query currentQuery;
 	
 	public Node(int idNum)
@@ -50,7 +51,7 @@ public class Node {
 
 		if(this.fileList != null){
 			for(int i=0; i< fileList.size(); i++){
-				//System.out.println(fileList.get(i).FileName+ " "+" " +in.file.FileName+"		" + nodeId);
+				System.out.println(fileList.get(i).FileName+ " "+" " +in.file.FileName+"		" + nodeId);
 				if(fileList.get(i).FileName.equals(in.file.FileName) ){
 					fileFound=true;
 				}
@@ -59,7 +60,7 @@ public class Node {
 		}
 		
 		if(fileFound){
-			//System.out.println("Found at " + nodeId);
+			System.out.println("Found at " + nodeId);
 			return nodeId;
 		}
 		else if(in.hopCount >= 7){

@@ -14,7 +14,8 @@ public class RunGnutella {
 		//make new graph
 		GenerateGraph TestGraph = new GenerateGraph();
 		
-		for(int i=0; i<1000; i++){
+		int times= 10;
+		for(int i=0; i<times; i++){
 			//choose node to start search from
 			int start =  rand.nextInt(TestGraph.n);
 			//System.out.println("Start from " + start);
@@ -51,11 +52,11 @@ public class RunGnutella {
 		
 		}
 		
-		System.out.println("Average Time for 1000 runs is: " + (averageRunTime/1000.0));
-		System.out.println("Average Hops for 1000 runs is: " + (averageHops/1000.0));
+		System.out.println("Average Time for 1000 runs is: " + (averageRunTime/times));
+		System.out.println("Average Hops for 1000 runs is: " + (averageHops/times));
 		
-		//System.out.println("Average Time for 1 run is: " + (averageRunTime));
-		//System.out.println("Average Hops for 1 run is: " + (averageHops));
+		System.out.println("Time for "+times+" run is: " + (averageRunTime));
+		System.out.println("Hops for "+times+" run is: " + (averageHops));
 
 	}
 
