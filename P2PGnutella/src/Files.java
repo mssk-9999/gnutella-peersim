@@ -7,7 +7,10 @@ public class Files {
 	
 	public Files(){
 		
-		FileName = "file" + (1 + rand.nextInt(19));
+		if(rand.nextBoolean())
+			FileName = "file" + (1 + rand.nextInt(19));
+		else
+			FileName = "file" + (21 + rand.nextInt(79));
 		
 	}
 	

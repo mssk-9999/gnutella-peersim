@@ -12,7 +12,7 @@
 #plot "output"  with line 
 #plot "output"  with boxes 
 
-#plot "output"  
+plot "output"  
 
 #plot "output" index 0 , \
 #	"output" index 1 , \

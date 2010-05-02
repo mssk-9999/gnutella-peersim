@@ -20,7 +20,7 @@ public class GenerateGraph {
 		
 		for(int i=1; i<=5000; i++){
 			graph.get(i).addNeighbors(GenerateNeighbors());
-			System.out.println();
+			//System.out.println();
 		}
 
 
@@ -41,14 +41,14 @@ public class GenerateGraph {
 				nodes.add(graph.get(neighbor));
 			}
 
-			///*
+			/*
 			for(int j=0; j<nodes.size(); j++)
 			{
 				System.out.print(nodes.get(j).nodeId + " ");
 				if ( (j+1)%5==0)
 				System.out.println();
 			}
-			//*/
+			*/
 		}
 		else{
 			//System.out.println();
@@ -58,7 +58,7 @@ public class GenerateGraph {
 				nodes.add(graph.get(neighbor));
 			}
 
-			///*
+			/*
 			//System.out.println();
 			for(int j=0; j<nodes.size(); j++)
 			{
@@ -66,7 +66,7 @@ public class GenerateGraph {
 				if ( (j+1)%5==0)
 				System.out.println();
 			}
-			//*/
+			*/
 		}
 		return nodes;
 	}

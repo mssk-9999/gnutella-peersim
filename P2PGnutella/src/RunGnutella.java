@@ -17,6 +17,7 @@ public class RunGnutella {
 		for(int i=0; i<1000; i++){
 			//choose node to start search from
 			int start =  rand.nextInt(TestGraph.n);
+			//System.out.println("Start from " + start);
 			
 			//choose file to search for
 			while(flag){
@@ -31,6 +32,7 @@ public class RunGnutella {
 				}
 			
 			}
+
 			//System.out.println("File to find is " + file.FileName);
 			
 			//take down start time
@@ -38,7 +40,8 @@ public class RunGnutella {
 			
 			
 			//execute a search
-			TestGraph.graph.get(start).Flood(TestGraph.graph.get(start).GenerateQuery(file));
+			//TestGraph.graph.get(start).Flood(TestGraph.graph.get(start).GenerateQuery(file));
+			TestGraph.graph.get(start).RandomWalk(TestGraph.graph.get(start).GenerateQuery(file));
 			
 			//take down search end time
 			stopTime = System.currentTimeMillis();
@@ -48,10 +51,11 @@ public class RunGnutella {
 		
 		}
 		
-		//System.out.println("Average Time for 1000 runs is: " + (averageRunTime/1000.0));
-		//System.out.println("Average Hops for 1000 runs is: " + (averageHops/1000.0));
+		System.out.println("Average Time for 1000 runs is: " + (averageRunTime/1000.0));
+		System.out.println("Average Hops for 1000 runs is: " + (averageHops/1000.0));
 		
-		
+		//System.out.println("Average Time for 1 run is: " + (averageRunTime));
+		//System.out.println("Average Hops for 1 run is: " + (averageHops));
 
 	}
 
