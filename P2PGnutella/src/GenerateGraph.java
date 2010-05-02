@@ -22,7 +22,9 @@ public class GenerateGraph {
 		// link
 		
 		for(int i=1; i<=5000; i++){
-			graph.get(i).addNeighbors(GenerateNeighbors());
+			//graph.get(i).addNeighbors(GenerateNeighbors());
+			//for(int j=0; j<graph.get(i).fileList.size(); j++)
+			//	System.out.print(" " + graph.get(i).fileList.get(j).FileName);
 			//System.out.println();
 		}
 

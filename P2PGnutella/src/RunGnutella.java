@@ -52,11 +52,11 @@ public class RunGnutella {
 		
 		}
 		
-		System.out.println("Average Time for 1000 runs is: " + (averageRunTime/times));
-		System.out.println("Average Hops for 1000 runs is: " + (averageHops/times));
+		//System.out.println("Average Time for 1000 runs is: " + (averageRunTime/times));
+		//System.out.println("Average Hops for 1000 runs is: " + (averageHops/times));
 		
-		System.out.println("Time for "+times+" run is: " + (averageRunTime));
-		System.out.println("Hops for "+times+" run is: " + (averageHops));
+		//System.out.println("Time for "+times+" run is: " + (averageRunTime));
+		//System.out.println("Hops for "+times+" run is: " + (averageHops));
 
 	}
 

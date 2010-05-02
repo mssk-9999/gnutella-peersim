@@ -35,9 +35,13 @@ public class NodeOneHop {
 		//files should appear in between 5 and 50 times total in the network
 		Random rand = new Random();
 		
-		for(int i=0;i <= rand.nextInt(4); i++){
+		/*there fore given max possibility is .20 and the total number of files is 20
+		the maximum numbers of papers a node should hold is four.
+		Randomly choose the number of papers in a node and randomly choose the paper 
+		that will be in that node*/
+		//for(int i=0;i <= rand.nextInt(4); i++){
 			fileList.add(new Files());
-		}
+		//}
 		
 	}//end addFilesToList
 	
@@ -105,12 +109,12 @@ public class NodeOneHop {
 		boolean fileFound = false;
 		in.nodeIdsVisited.add(new NodeIds(nodeId));
 		in.hopCount++;
-		System.out.println(in.hopCount + " " +nodeId);
+	//	System.out.println(in.hopCount + " " +nodeId);
 
 
 		if(this.fileList != null){
 			for(int i=0; i< fileList.size(); i++){
-				System.out.println(fileList.get(i).FileName+ " "+" " +in.file.FileName+"		" + nodeId);
+				//System.out.println(fileList.get(i).FileName+ " "+" " +in.file.FileName+"		" + nodeId);
 				if(fileList.get(i).FileName.equals(in.file.FileName) ){
 					fileFound=true;
 				}
@@ -121,7 +125,7 @@ public class NodeOneHop {
 		for(int j= 0; j< neighbors.size(); j++){
 			if(neighbors.get(j).nodeId !=0)
 				for(int m=0; m< neighbors.get(j).fileList.size(); m++){
-					System.out.println("	" + neighbors.get(j).fileList.get(m).FileName+ " "+" " +in.file.FileName+"		" + nodeId);
+					//System.out.println("	" + neighbors.get(j).fileList.get(m).FileName+ " "+" " +in.file.FileName+"		" + nodeId);
 					if(neighbors.get(j).fileList.get(m).FileName.equals(in.file.FileName) )
 						fileFound=true;
 				}
@@ -131,8 +135,8 @@ public class NodeOneHop {
 
 
 		if(fileFound){
-			System.out.println("Found at " + nodeId);
-			System.out.println(in.hopCount);
+			//System.out.println("Found at " + nodeId);
+			//System.out.println(in.hopCount);
 			return nodeId;
 		}
 		else{
