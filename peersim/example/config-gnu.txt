@@ -11,13 +11,13 @@ network.node GnuNode
 ################################ PROTOCOL ################################################
 protocol.lnk IdleProtocol
 
-#protocol.avg example.aggregation.AverageFunction
-protocol.avg FloodingQuery
+protocol.avg example.aggregation.AverageFunction
+#protocol.avg FloodingQuery
 protocol.avg.linkable lnk
 # which file we are finding
-protocol.avg.target 19
+#protocol.avg.target 19
 # from which node we start to look
-protocol.avg.start 100
+#protocol.avg.start 100
 
 ################################ INIT CONTROL ################################################
 init.rnd WireKOut
@@ -37,6 +37,6 @@ include.init rnd gnu
 
 ################################ WATCHING ################################################
 ################################ CONTROL ################################################
-control.sn  SetNode
-control.sn.protocol avg
-control.sn.protocol lnk
+#control.sn  SetNode
+#control.sn.protocol avg
+#control.sn.protocol lnk

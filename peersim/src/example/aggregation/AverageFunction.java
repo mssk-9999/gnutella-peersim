@@ -90,11 +90,11 @@ public class AverageFunction extends SingleValueHolder implements CDProtocol {
                    .getProtocol(protocolID);
 
 			//System.out.print("before "+this.value+"\t"+neighbor.value);
-			System.out.println(this.value+"\t"+neighbor.value);
+			//System.out.println(this.value+"\t"+neighbor.value);
 			//
 			//System.out.println(count++ + "\t"+this.value);
 			//
-			//System.out.println(this.value);
+			System.out.println(this.value);
 
 //            double mean = (this.value + neighbor.value) / 2;
  //           this.value = mean;

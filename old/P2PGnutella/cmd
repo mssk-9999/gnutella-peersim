@@ -1,0 +1,5 @@
+#! /bin/sh
+
+make clean &>/dev/null
+make  &>/dev/null
+make run 
