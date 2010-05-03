@@ -7,7 +7,9 @@ public class Files {
 	
 	public Files(){
 		
-		FileName = "file" + (1 + rand.nextInt(19));
+		//FileName = "file" + (1 + rand.nextInt(19));
+		FileName = "" + (1 + rand.nextInt(19));
+		System.out.println(FileName);
 		
 	}
 	
